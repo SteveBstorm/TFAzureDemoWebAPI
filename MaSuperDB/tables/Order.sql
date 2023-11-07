@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[Order]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
+	UserId INT,
+	PizzaId INT,
+	Quantity INT,
+	DateOrder Datetime2(7)
+
+	CONSTRAINT FK_Pizza FOREIGN KEY (PizzaId) REFERENCES Pizza(Id),
+	CONSTRAINT FK_User FOREIGN KEY (UserId) REFERENCES Users(Id)
+)
